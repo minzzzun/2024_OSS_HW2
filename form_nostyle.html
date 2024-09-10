@@ -6,34 +6,66 @@
   <title>22000078 김민준 OSS HW2</title>
 </head>
 <body>
+
+  <img src="bootstrap-logo.svg" width="72" height="57">
+  <h2>Checkout form</h2>
+  <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+  <h4>Billing address</h4>
+
+
   <form>
-    <h2>1</h2>
-    <label for="fname">이름:</label><br>
-    <input type="text" id="fname" name="fname"><br>
+  <fieldset>
+    <legend>User</legend>
+  <label for="fname">First name :</label>
+  <input type="text" id="fname" name="fname"> <br>
 
-    <h2>2</h2>
-    <label for="lname" >성:</label><br>
-    <input type="text" id="lname" name="lname" placeholder="성을 입력하세요"><br>
+  <label for="lname">Last name :</label>
+  <input type="text" id="lname" name="lname"><br>
 
-    <h2>3</h2>
-    <label for="birthday"> 생년월일</label><br>
-    <input type="date" id="birthday"><br>
+  <label for="myemail">User email : </label>
+  <input type="email"  id="myemail" name="myemail" placeholder="abc@gmail.com"><br>
 
-    <h2>4</h2>
-    <label for="mycolor">내 최애 색깔은? </label><br>
-    <input type="color" id="mycolor"><br>
 
-    <h2>5</h2>
-    <input type="checkbox" id="s4">
-    <label for="s4">나는 과자를 좋아한다.</label><br>
+  <label for="mybirth">User birthday : </label>
+  <input type="date" id="mybirth" name="mybirth"><br>
+  
 
-    <input type="checkbox" id="s5">
-    <label for="s5">김세진교수님은 잘생겼다.</label><br>
+  <label for="mycolor">My Personal Color :</label>
+  <input type="color" id="mycolor" name="mycolor"><br>
+</fieldset>
 
-    <input type="checkbox" id="s6">
-    <label for="s6">나는 치킨을 좋아한다.</label><br>
+  
 
-    <h2>6</h2> 
+ 
+  <label for="myintro">User introduce</label><br>
+  <textarea id="myintro" name="myintro" cols="30" rows="5"></textarea><br>
+  <br>
+  <label for="size">옷 사이즈를 선택하세요</label>
+  <select id="size" name="size">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  
+  
+
+    <h4>Payment</h4>
+    <input type="radio" id="creditcard" name="payment" value="creditcard">
+    <label for="creditcard">신용카드</label><br>
+    <input type="radio" id="kakao" name="payment" value="kakao">
+    <label for="kakao">카카오페이</label><br>
+    <input type="radio" id="naver" name="payment" value="naver">
+    <label for="naver">네이버페이</label><br><br>
+
+  <input type="checkbox" name="option1" id="option1">
+  <label for="option1">(필수)개인 정보 제공에 동의함</label><br>
+  <input type="checkbox" name="option2" id="option2">
+  <label for="option2">(필수)개인 정보 이용에 동의함</label><br>
+  <input type="checkbox" name="option3" id="option3">
+  <label for="option3">(선택)광고 수신메일에 동의함</label><br>
+
+    <input type="submit" name="submit"><input type="reset" name="reset"> 
   </form>
 </body>
 </html>
