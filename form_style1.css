@@ -37,3 +37,18 @@ hr{
   margin-bottom: 2rem;
 
 }
+
+
+input[type="submit"], input[type="reset"] {
+  
+  background-color: #0d6efd;
+  color : white;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width : 30%;
+  margin-right: 30px;
+  border-color: #0d6efd;
+  border-radius: 10px;
+}
