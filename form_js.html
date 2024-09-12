@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22000078 김민준 OSS HW2</title>
+
+  <link rel="stylesheet" href="/form_style1.css">
+  
+</head>
+<body>
+  <div id="head-center">
+  <img src="bootstrap-logo.svg" width="72" height="57">
+  <h2>Checkout form</h2>
+  <p>Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a<br> validation state that can be triggered by attempting to submit the form without completing it.</p>
+  
+  </div>
+  <h4>Billing address</h4>
+  <form name="form1" onsubmit="val_form(event)">
+  <fieldset>
+    <legend>User</legend>
+
+
+
+  <div class="name_field">
+    <div id="fname_div">
+      <label for="fname">First name </label><br>
+      <input type="text" id="fname" name="fname" placeholder="이름을 입력하세요"> 
+    </div>
+    <div id="lname_div">
+      <label for="lname">Last name </label><br>
+      <input type="text" id="lname" name="lname" placeholder="이름을 입력하세요"><br>
+    </div>
+  </div>
+
+  <label for="myemail">User email </label><br>
+  <input type="email"  id="myemail" name="myemail" placeholder="abc@gmail.com"><br>
+
+
+  <label for="mybirth">User birthday  </label><br>
+  <input type="date" id="mybirth" name="mybirth"><br>
+  
+
+  <label for="mycolor">My Personal Color </label><br>
+  <input type="color" id="mycolor" name="mycolor"><br>
+</fieldset>
+
+  
+
+ 
+  <label for="myintro">User introduce</label><br>
+  <textarea id="myintro" name="myintro" cols="30" rows="5"></textarea><br>
+  <br>
+  <label for="size">옷 사이즈를 선택하세요</label>
+  <select id="size" name="size">
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  <hr>
+
+    <h4>Payment</h4>
+    <input type="radio" id="creditcard" name="payment" value="creditcard">
+    <label for="creditcard">신용카드</label><br>
+    <input type="radio" id="kakao" name="payment" value="kakao">
+    <label for="kakao">카카오페이</label><br>
+    <input type="radio" id="naver" name="payment" value="naver">
+    <label for="naver">네이버페이</label><br><br>
+<hr>
+  <input type="checkbox" name="option1" id="option1">
+  <label for="option1">(필수)개인 정보 제공에 동의함</label><br>
+  <input type="checkbox" name="option2" id="option2">
+  <label for="option2">(필수)개인 정보 이용에 동의함</label><br>
+  <input type="checkbox" name="option3" id="option3">
+  <label for="option3">(선택)광고 수신메일에 동의함</label><br>
+  <hr>
+    <input type="submit" name="submit" value="submit" ><input type="reset"  id="clear" name="reset" value="reset"  ㅐㅜ> 
+  </form>
+
+
+  <script>
+    document.getElementById('clear').addEventListener('click', function(event) {
+    event.preventDefault(); 
+    if(confirm("정말로 초기화하시겠습니까?")) {
+      document.querySelector('form').reset();
+      alert("초기화 되었습니다.");
+    }
+  });
+
+
+  document.getElementById('lname').addEventListener('input', function() {
+    this.value = this.value.toUpperCase();
+});
+
+
+  let count = 0;
+  document.getElementById('clear').onclick = function(){
+    count++;
+    alert(count+"번 초기화 하였습니다.");
+  }
+
+
+  function val_form(event){
+    var fname = document.getElementById("fname");
+    if(fname.value == ""){
+      event.preventDefault();
+      alert("이름을 입력하세요");
+      return false;
+    }
+
+    var mybirthlname = document.getElementById("lname");
+    if(lname.value == ""){
+      event.preventDefault();
+      alert("성을 입력하세요");
+      return false;
+    }
+
+    var myemail = document.getElementById("myemail");
+    if(myemail.value == ""){
+      event.preventDefault();
+      alert("이메일을 입력하세요");
+      return false;
+    }
+
+
+    var mybirth = document.getElementById("mybirth");
+    if(mybirth.value == ""){
+      event.preventDefault();
+      alert("생일을 입력하세요");
+      return false;
+    }
+
+
+    var myintro = document.getElementById("myintro");
+    if(myintro.value == ""){
+      event.preventDefault();
+      alert("자기소개를 입력하세요");
+      return false;
+    }
+
+  
+
+    var paymentMethods = document.getElementsByName("payment");
+    var paymentSelected = false;
+    for (var i = 0; i < paymentMethods.length; i++) {
+      if (paymentMethods[i].checked) {
+        paymentSelected = true;
+        break;
+      }
+    }
+    if (!paymentSelected) {
+      event.preventDefault();
+      alert("결제수단을 선택하세요");
+      return false;
+    }
+
+    // 필수 동의 항목 유효성 검사
+    var option1 = document.getElementById("option1");
+    var option2 = document.getElementById("option2");
+    if (!option1.checked || !option2.checked) {
+      event.preventDefault();
+      alert("필수 항목에 동의해주세요");
+      return false;
+    }
+  
+
+
+
+  }
+
+
+  </script>
+</body>
+</html>

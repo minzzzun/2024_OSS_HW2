@@ -17,14 +17,14 @@
   <button id='register' onclick="list_append()">등록</button>
   <button id="delete" onclick="list_delete()">삭제</button>
  </div>
-  <div id="list"></div>
+  <div id="list"><ul></ul></div>
   </div>
   <script>
     function list_append(){
       let list = document.getElementById("list");
       let input = document.getElementById("list_input").value;
 
-      list.innerHTML += "<div>"+input+"</div>"
+      list.innerHTML += "<li>"+input+"</li>"
 
     }
     function list_delete(){
