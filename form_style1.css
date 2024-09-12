@@ -11,6 +11,7 @@ input[type="text"] , input[type="email"], input[type="date"], textarea  {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  border-radius: 15px;
 }
 
 
@@ -37,6 +38,7 @@ hr{
   margin-bottom: 2rem;
 
 }
+
 
 
 input[type="submit"], input[type="reset"] {

@@ -4,15 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HW2_22000078_김민준</title>
+  <link rel="stylesheet" href="formcss.css">
 </head>
 <body>
 
-  <h2>동적페이지 생성</h2>
-  <input type="text" id="list_input">  
-  <button onclick="list_append()">등록</button>
-  <button onclick="list_delete()">삭제</button>
- <div id="list"></div>
 
+  <div id="center">
+  
+  <h2>동적페이지 생성</h2>
+  <div id="input_component">
+  <input type="text" id="list_input">  
+  <button id='register' onclick="list_append()">등록</button>
+  <button id="delete" onclick="list_delete()">삭제</button>
+ </div>
+  <div id="list"></div>
+  </div>
   <script>
     function list_append(){
       let list = document.getElementById("list");
