@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW2_22000078_김민준</title>
+</head>
+<body>
+
+  <h2>동적페이지 생성</h2>
+  <input type="text" id="list_input">  
+  <button onclick="list_append()">등록</button>
+  <button onclick="list_delete()">삭제</button>
+ <div id="list"></div>
+
+  <script>
+    function list_append(){
+      let list = document.getElementById("list");
+      let input = document.getElementById("list_input").value;
+
+      list.innerHTML += "<div>"+input+"</div>"
+
+    }
+    function list_delete(){
+      let list = document.getElementById("list");
+      list.innerHTML = "";
+      document.getElementById
+      document.getElementById("list_input").value = "";
+
+
+    }
+
+
+  </script>
+
+
+
+  
+</body>
+</html>
