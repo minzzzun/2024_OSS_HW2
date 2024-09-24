@@ -54,6 +54,8 @@
     <form onsubmit="event.preventDefault(); saveVerse();">
     <label for="verseTitle"> <h4>암송구절 주소:</h4></label>
     <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" required><br><br>
+
+
     <label for="verseContent"><h4>성경:</h4></label><br>
     <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"   required></textarea><br><br>
 
@@ -76,13 +78,11 @@
     <label for="prayText"><h4>묵상:</h4></label><br>
     <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요"   required></textarea><br><br>
 
-    <!-- <label for="bibleImage"><h4>넣고싶은 이미지</h4></label>
-    <input type="image" id="bibleImage"> <br><br> -->
 
 
-    <label for="bibleUrl"><h4>생각나는 찬양 링크</h4></label><br>
-    <input type="url" id="bibleUrl"><br><br>
-    
+   <label for="name"> <h4>작성자:</h4></label><br>
+    <input type="text" id="name" placeholder="작성자를 입력하세요"><br><br>
+
     <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
     <button class="btn btn-danger" id="cancelBtn" type="submit" >취소하기</button><br><br>
     </form>
