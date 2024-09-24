@@ -10,3 +10,37 @@
   background-color: #2f9339;
   padding: 5px 10px;
 }
+
+body {
+  font-family: 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+}
+
+
+#verseTitle{
+  width: 400px;
+}
+#verseContent ,#prayText{
+  width: 400px;
+  height: 400px;
+}
+
+#bibleUrl{
+  width: 400px;
+}
+
+
+
+#saveBtn {
+  padding: 10px 20px;
+  background-color: #2f9339;
+  color: white;
+  margin-bottom: 10px;
+  width: 115%;
+}
+
+
+#cancelBtn{
+  padding: 10px 20px;
+  color: white;
+  width: 115%;
+}

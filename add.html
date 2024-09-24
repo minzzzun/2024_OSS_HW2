@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="my.css">
 
   <style>
     
@@ -47,125 +46,85 @@
   </div>
 </nav>
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">이사야 58 : 12 </div>
-        <div class="panel-body">
+  <div class="container">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div><h1>암송한 구절 추가 </h1></div>
+    <br>
+    <form onsubmit="event.preventDefault(); saveVerse();">
+    <label for="verseTitle"> <h4>암송구절 주소:</h4></label>
+    <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" required><br><br>
+    <label for="verseContent"><h4>성경:</h4></label><br>
+    <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"   required></textarea><br><br>
 
-          네게서 날자들이 오래 황폐된 곳들을 
-          <div>
-            QT내용
-          </div>
-        </div>
-        <div class="panel-footer"> 
-          <div class="row">
-            <div class="col-sm-9">개역개정</div> <div class="col-sm-2">2024.09.24</div>
-          </div>
-          
-          <br>
-          
-      
-          <button type="button" class="btn-default"><a href="edit.html"> Edit</a></button>
+    <label for="verseDate"><h4>날짜:</h4></label><br>
+    <input type="date" id="verseDate" required><br><br>
 
-        </div>
-        
-      </div>
+    <div class="form-group">
+      <label for="sel1"><h4>역본:</h4></label>
+      <select class="form-control" id="sel1">
+        <option>개역개정</option>
+        <option>개역한글</option>
+        <option>표준새번역</option>
+        <option>새번역</option>
+        <option>공동번역</option>
+        <option>공동번역 개정판</option>
+      </select>
     </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
+    <br>
 
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
+    <label for="prayText"><h4>묵상:</h4></label><br>
+    <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요"   required></textarea><br><br>
+
+    <!-- <label for="bibleImage"><h4>넣고싶은 이미지</h4></label>
+    <input type="image" id="bibleImage"> <br><br> -->
+
+
+    <label for="bibleUrl"><h4>생각나는 찬양 링크</h4></label><br>
+    <input type="url" id="bibleUrl"><br><br>
+    
+    <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
+    <button class="btn btn-danger" id="cancelBtn" type="submit" >취소하기</button><br><br>
+    </form>
   </div>
-</div><br>
-
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-          
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
+  <div class="col-sm-4"></div>
   </div>
-</div><br><br>
 
 
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-          
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-default">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body">
-
-        </div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
-  </div>
-</div>
 <footer class="container-fluid text-center">
-  <p>Online Store Copyright</p>  
-  <form class="form-inline">Get deals:
-    <input type="email" class="form-control" size="50" placeholder="Email Address">
-    <button type="button" class="btn btn-danger">Sign Up</button>
-  </form>
+  <p>22000078 김민준</p>  
+
 </footer>
 
+<script>
+  function saveVerse() {
+    // 입력 필드에서 구절 정보를 가져옴
+    const verseTitle = document.getElementById('verseTitle').value;
+    const verseContent = document.getElementById('verseContent').value;
+    const verseDate = document.getElementById('verseDate').value;
+
+    // 구절 정보 객체 생성
+    const verse = {
+      title: verseTitle,
+      content: verseContent,
+      date: verseDate
+    };
+
+    // LocalStorage에 저장
+    let verses = JSON.parse(localStorage.getItem('verses')) || [];
+    verses.push(verse);
+    localStorage.setItem('verses', JSON.stringify(verses));
+
+    // 저장 후 입력 필드 초기화
+    document.getElementById('verseTitle').value = '';
+    document.getElementById('verseContent').value = '';
+    document.getElementById('verseDate').value = '';
+    
+
+    alert("게시물이 추가됩니다.")
+    window.location.href = 'index.html';
+
+  }
+</script>
 </body>
 </html>
