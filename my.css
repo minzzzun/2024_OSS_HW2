@@ -1,0 +1,12 @@
+.edit_btn{
+  background-color: #75e382;
+  border : 1px  solid;
+  border-radius: 20px;
+  padding: 10px 20px; 
+
+}
+
+.badge{
+  background-color: #2f9339;
+  padding: 5px 10px;
+}
