@@ -68,8 +68,8 @@
         <option>개역개정</option>
         <option>개역한글</option>
         <option>표준새번역</option>
-        <option>새번역</option>
         <option>공동번역</option>
+        <option>새번역</option>
         <option>공동번역 개정판</option>
       </select>
     </div>
@@ -84,7 +84,7 @@
     <input type="text" id="name" placeholder="작성자를 입력하세요"><br><br>
 
     <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
-    <button class="btn btn-danger" id="cancelBtn" type="submit" >취소하기</button><br><br>
+    <button class="btn btn-danger" id="cancelBtn" type="reset" onclick="cancelButton()">취소하기</button><br><br>
     </form>
   </div>
   <div class="col-sm-4"></div>
@@ -97,29 +97,45 @@
 </footer>
 
 <script>
+  function cancelButton() {
+
+    window.location.href = 'index.html';
+  }
+
+
   function saveVerse() {
-    // 입력 필드에서 구절 정보를 가져옴
+
     const verseTitle = document.getElementById('verseTitle').value;
     const verseContent = document.getElementById('verseContent').value;
     const verseDate = document.getElementById('verseDate').value;
+    const bibleVersion = document.getElementById('sel1').value;
+    const prayText = document.getElementById('prayText').value;
+    const name = document.getElementById('name').value;
+    
 
-    // 구절 정보 객체 생성
-    const verse = {
+
+    const newContent = {
       title: verseTitle,
       content: verseContent,
-      date: verseDate
+      date: verseDate,
+      version: bibleVersion,
+      pray: prayText,
+      uname: name
     };
 
     // LocalStorage에 저장
-    let verses = JSON.parse(localStorage.getItem('verses')) || [];
-    verses.push(verse);
-    localStorage.setItem('verses', JSON.stringify(verses));
+    let bible = JSON.parse(localStorage.getItem('bible')) || [];
+    bible.push(newContent);
+    localStorage.setItem('bible', JSON.stringify(bible));
 
-    // 저장 후 입력 필드 초기화
+
     document.getElementById('verseTitle').value = '';
     document.getElementById('verseContent').value = '';
     document.getElementById('verseDate').value = '';
-    
+    document.getElementById('sel1').value = '개역개정';
+    document.getElementById('prayText').value = '';
+    document.getElementById('name').value = '';
+
 
     alert("게시물이 추가됩니다.")
     window.location.href = 'index.html';

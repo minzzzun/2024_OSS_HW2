@@ -258,10 +258,140 @@
     </div>
   </div>
 </div>
+
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">마태복음 5 : 13 - 16 </div>
+        <div class="panel-body">
+          13   너희는 세상의 소금이니 소금이 만일 그 맛을 잃으면 무엇으로 짜게 하리요 후에는 아무 쓸 데 없어 다만 밖에 버려져 사람에게 밟힐 뿐이니라<br>
+          14   너희는 세상의 빛이라 산 위에 있는 동네가 숨겨지지 못할 것이요<br>
+          15   사람이 등불을 켜서 말 아래에 두지 아니하고 등경 위에 두나니 이러므로 집 안 모든 사람에게 비치느니라<br>
+          16   이같이 너희 빛이 사람 앞에 비치게 하여 그들로 너희 착한 행실을 보고 하늘에 계신 너희 아버지께 영광을 돌리게 하라<br>
+          
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-8"><span class="badge">개역개정</span></div> <div class="col-sm-4">2024.09.24</div>
+          </div>
+          
+          <br>
+          
+      
+          <button type="button" class="btn btn-default" class="edit-btn"><a href="edit.html"> Edit</a></button>
+
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">마태복음 6 : 29 - 34 </div>
+        <div class="panel-body">
+          29   그러나 내가 너희에게 말하노니 솔로몬의 모든 영광으로도 입은 것이 이 꽃 하나만 같지 못하였느니라<br>
+          30   오늘 있다가 내일 아궁이에 던져지는 들풀도 하나님이 이렇게 입히시거든 하물며 너희일까보냐 믿음이 작은 자들아<br>
+          31   그러므로 염려하여 이르기를 무엇을 먹을까 무엇을 마실까 무엇을 입을까 하지 말라<br>
+          32   이는 다 이방인들이 구하는 것이라 너희 하늘 아버지께서 이 모든 것이 너희에게 있어야 할 줄을 아시느니라<br>
+          33   그런즉 너희는 먼저 그의 나라와 그의 의를 구하라 그리하면 이 모든 것을 너희에게 더하시리라<br>
+          34   그러므로 내일 일을 위하여 염려하지 말라 내일 일은 내일이 염려할 것이요 한 날의 괴로움은 그 날로 족하니라<br>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+            <div class="col-sm-8"><span class="badge">개역개정</span></div> <div class="col-sm-4">2024.09.24</div>
+          </div>
+          
+          <br>
+          
+      
+          <button type="button" class="btn btn-default" class="edit-btn"><a href="edit.html"> Edit</a></button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-default">
+        <div class="panel-heading">마태복음 7 : 12 - 14</div>
+        <div class="panel-body">
+          12   그러므로 무엇이든지 남에게 대접을 받고자 하는 대로 너희도 남을 대접하라 이것이 율법이요 선지자니라<br>
+          13   좁은 문으로 들어가라 멸망으로 인도하는 문은 크고 그 길이 넓어 그리로 들어가는 자가 많고<br>
+          14   생명으로 인도하는 문은 좁고 길이 협착하여 찾는 자가 적음이라<br>
+        </div>
+        <div class="panel-footer">
+          <div class="row">
+          <div class="col-sm-8"><span class="badge">개역개정</span></div> <div class="col-sm-4">2024.09.24</div>
+        </div>
+        
+        <br>
+        
+    
+        <button type="button" class="btn btn-default" class="edit-btn"><a href="edit.html"> Edit</a></button>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="bibleContainer">
+
+</div>
+
+
+
+
 <footer class="container-fluid text-center">
   <p>22000078 김민준</p>  
-  
+  <button class="btn btn-danger" id="delete"  onclick="deleteButton()">삭제하기</button><br><br>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    displayVerses();
+  });
+
+  function deleteButton(){
+    
+    if(confirm("전체를 삭제하시겠습니까?")) {
+      localStorage.clear();
+      alert("초기화 되었습니다.");
+    }
+  }
+
+
+  function displayVerses() {
+    const bibleContainer = document.getElementById('bibleContainer');
+    const bible = JSON.parse(localStorage.getItem('bible')) || [];
+
+    bible.forEach(function(verse) {
+      const panel = document.createElement('div');
+      panel.className = 'col-sm-4';
+      panel.innerHTML = `
+        <div class="panel panel-default">
+          <div class="panel-heading">${verse.title}</div>
+          <div class="panel-body">
+            ${verse.content}
+          </div>
+          <div class="panel-footer">
+            <p> ${verse.version}</p>
+            <p> ${verse.date}</p>
+
+
+            
+
+          </div>
+        </div>
+      `;
+      bibleContainer.appendChild(panel);
+    });
+    alert("성공적으로 추가했습니다");
+  }
+  
+</script>
+
+
+
 
 </body>
 </html>
