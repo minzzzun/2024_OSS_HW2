@@ -27,6 +27,8 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+
+    
   </style>
 </head>
 <body>
@@ -374,20 +376,24 @@
             ${verse.content}
           </div>
           <div class="panel-footer">
-            <p> ${verse.version}</p>
-            <p> ${verse.date}</p>
+            <div class="row">
+              <div class="col-sm-8"><span class="badge">${verse.version}</span></div>
+              <div class="col-sm-4">${verse.date}</div>
+              </div>
+              <br>
+            <button type="button" class="btn btn-default edit-btn"><a href="edit.html"> Edit</a></button>
 
-
-            
 
           </div>
         </div>
       `;
       bibleContainer.appendChild(panel);
+
     });
-    alert("성공적으로 추가했습니다");
   }
   
+
+
 </script>
 
 
