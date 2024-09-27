@@ -42,13 +42,23 @@
 </div>
 </a>
 
+
+
 <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">성경암송</a>
+    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="index.html">Home</a></li>
-        <li ><a href="add.html">추가</a></li>
+        <li><a href="add.html">추가</a></li>
       </ul>
-
     </div>
   </div>
 </nav>
@@ -345,7 +355,7 @@
 
 <footer class="container-fluid text-center">
   <p>22000078 김민준</p>  
-  <button class="btn btn-danger" id="delete"  onclick="deleteButton()">삭제하기</button><br><br>
+  <button class="btn btn-danger" id="delete"  onclick="deleteButton()">전체 삭제하기</button><br><br>
 </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function() {

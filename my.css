@@ -59,3 +59,34 @@ body {
 .panel-default{
   cursor: pointer;
 }
+
+
+
+@media screen and (max-width: 600px) {
+  input {
+    width: 90%; 
+    padding: 8px;
+    font-size: 14px;
+    
+  }
+
+  #saveBtn, #cancelBtn ,#listBtn{
+    width : 350px;
+  }
+
+ 
+}
+
+
+@media screen and (max-width: 300px) {
+  input {
+    padding: 5px;
+    font-size: 12px;
+    width: 50%;
+  }
+
+  #saveBtn, #cancelBtn {
+    width : 100px;
+  }
+
+}
