@@ -48,10 +48,6 @@ body {
 
 
 
-  .badge-개역개정 { background-color:#2f9339; }
-  .badge-개역한글 { background-color: #285ba7; }
-  .badge-표준새번역 { background-color: #ffc107; color: #000; }
-  .badge-공동번역 { background-color: #dc3545; }
-  .badge-새번역 { background-color: #6c757d; }
-  .badge-새번역개정판 { background-color: #6c757d; }
-  
+.panel-default{
+  cursor: pointer;
+}

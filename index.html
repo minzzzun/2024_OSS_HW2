@@ -33,12 +33,14 @@
 </head>
 <body>
 
+  <a href="index.html" style="text-decoration: none; color: inherit;">
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>성경암송 </h1>      
+    <h1 >성경암송 </h1>      
     <p>암송, 묵상 & 실천</p>
   </div>
 </div>
+</a>
 
 <nav class="navbar navbar-inverse">
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -54,7 +56,7 @@
 <div class="container">    
   <div class="row">
     <div class="col-sm-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default" onclick="defaultPanelCliked()">
         <div class="panel-heading">이사야 58 : 12 </div>
         <div class="panel-body">
          
@@ -357,7 +359,7 @@
     
     if(confirm("전체를 삭제하시겠습니까?")) {
       localStorage.clear();
-      alert("초기화 되었습니다.");
+      alert("삭제했습니다.");
     }
   }
 
@@ -381,7 +383,7 @@
               <div class="col-sm-4">${verse.date}</div>
               </div>
               <br>
-            <button type="button" class="btn btn-default edit-btn"><a href="edit.html"> Edit</a></button>
+            <button type="button" class="btn btn-default e  dit-btn"><a href="edit.html"> Edit</a></button>
 
 
           </div>
@@ -393,7 +395,16 @@
   }
   
 
+function defaultPanelCliked(){
 
+
+
+
+
+
+   window.location.href = "view.html";
+
+}
 </script>
 
 

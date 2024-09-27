@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HW2_2 22000078 김민준</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="my.css">
+
+  <style>
+    
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" style="text-decoration: none; color: inherit;">
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>성경암송 </h1>      
+    <p>암송, 묵상 & 실천</p>
+  </div>
+</div>
+</a>
+
+<nav class="navbar navbar-inverse">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">Home</a></li>
+        <li class="active"><a href="add.html">추가</a></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+  <div class="container">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div><h1>암송한 구절 추가 </h1></div>
+    <br>
+    <form onsubmit="event.preventDefault();  saveVerse();">
+    <label for="verseTitle"> <h4>암송구절 주소:</h4></label>
+    <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" required><br><br>
+
+
+    <label for="verseContent"><h4>성경:</h4></label><br>
+    <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"  required ></textarea><br><br>
+
+    <label for="verseDate"><h4>날짜:</h4></label><br>
+    <input type="date" id="verseDate" required ><br><br>
+
+    <div class="form-group">
+      <label for="sel1"><h4>역본:</h4></label>
+      <select class="form-control" id="sel1" required>
+        <option selected>개역개정</option>
+        <option>개역한글</option>
+        <option>표준새번역</option>
+        <option>공동번역</option>
+        <option>새번역</option>
+        <option>공동번역 개정판</option>
+      </select>
+    </div>
+    <br>
+
+    <label for="prayText"><h4>묵상:</h4></label><br>
+    <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요" required ></textarea><br><br>
+
+
+
+   <label for="name"> <h4>작성자:</h4></label><br>
+    <input type="text" id="name" placeholder="작성자를 입력하세요"><br><br>
+
+    <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
+    <button class="btn btn-danger" id="cancelBtn" type="reset" onclick="cancelButton()">취소하기</button><br><br>
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+  </div>
+
+
+<footer class="container-fluid text-center">
+  <p>22000078 김민준</p>  
+
+</footer>
+
+<script>
+  function cancelButton() {
+
+    window.location.href = 'index.html';
+  }
+
+  
+
+  function saveVerse() {
+
+    const verseTitle = document.getElementById('verseTitle').value;
+    const verseContent = document.getElementById('verseContent').value;
+    const verseDate = document.getElementById('verseDate').value;
+    const bibleVersion = document.getElementById('sel1').value;
+    const prayText = document.getElementById('prayText').value;
+    const name = document.getElementById('name').value;
+  
+
+
+  //   if (!verseTitle.value.trim()) {
+  //   alert("성경 주소를 적어주세요");
+  //   verseTitle.focus();
+  //   return;
+  // }
+
+  // if (!verseContent.value.trim()) {
+  //   alert("성경 구절을 적어주세요");
+  //   verseContent.focus();
+  //   return;
+  // }
+
+
+
+    const newContent = {
+      title: verseTitle,
+      content: verseContent,
+      date: verseDate,
+      version: bibleVersion,
+      pray: prayText,
+      uname: name
+    };
+
+    // LocalStorage에 저장
+    let bible = JSON.parse(localStorage.getItem('bible')) || [];
+    bible.push(newContent);
+    localStorage.setItem('bible', JSON.stringify(bible));
+
+
+
+    document.getElementById('verseTitle').value = '';
+    document.getElementById('verseContent').value = '';
+    document.getElementById('verseDate').value = '';
+    document.getElementById('sel1').value = '개역개정';
+    document.getElementById('prayText').value = '';
+    document.getElementById('name').value = '';
+
+
+
+    alert("게시물이 추가됩니다.");
+    alert("성공적으로 추가했습니다");
+    window.location.href = 'index.html';
+
+
+  }
+</script>
+</body>
+</html>
