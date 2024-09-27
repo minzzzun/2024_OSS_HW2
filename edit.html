@@ -84,7 +84,7 @@
    <label for="name"> <h4>작성자:</h4></label><br>
     <input type="text" id="name" placeholder="작성자를 입력하세요"><br><br>
 
-    <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
+    <button class="btn btn-default" id="saveBtn" type="submit" >수정하기</button><br>
     <button class="btn btn-danger" id="cancelBtn" type="reset" onclick="cancelButton()">취소하기</button><br><br>
     </form>
   </div>
@@ -113,24 +113,8 @@
     const bibleVersion = document.getElementById('sel1').value;
     const prayText = document.getElementById('prayText').value;
     const name = document.getElementById('name').value;
-  
 
-
-  //   if (!verseTitle.value.trim()) {
-  //   alert("성경 주소를 적어주세요");
-  //   verseTitle.focus();
-  //   return;
-  // }
-
-  // if (!verseContent.value.trim()) {
-  //   alert("성경 구절을 적어주세요");
-  //   verseContent.focus();
-  //   return;
-  // }
-
-
-
-    const newContent = {
+      const newContent = {
       title: verseTitle,
       content: verseContent,
       date: verseDate,
@@ -143,21 +127,11 @@
     let bible = JSON.parse(localStorage.getItem('bible')) || [];
     bible.push(newContent);
     localStorage.setItem('bible', JSON.stringify(bible));
+    if(confirm("게시물을 수정할까요?")) {
+      alert("수정되었습니다.");
+      window.location.href = 'index.html';
+    }
 
-
-
-    document.getElementById('verseTitle').value = '';
-    document.getElementById('verseContent').value = '';
-    document.getElementById('verseDate').value = '';
-    document.getElementById('sel1').value = '개역개정';
-    document.getElementById('prayText').value = '';
-    document.getElementById('name').value = '';
-
-
-
-    alert("게시물이 추가됩니다.");
-    alert("성공적으로 추가했습니다");
-    window.location.href = 'index.html';
 
 
   }

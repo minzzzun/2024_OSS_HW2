@@ -50,22 +50,25 @@
   <div class="container">
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
-    <div><h1>암송한 구절 추가 </h1></div>
+    <div><h1>암송한 구절 보기 </h1></div>
     <br>
-    <form onsubmit="event.preventDefault();  saveVerse();">
+    <form >
     <label for="verseTitle"> <h4>암송구절 주소:</h4></label>
-    <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" required><br><br>
+    <input type="textarea" id="verseTitle" placeholder="마태복음 5 : 14 - 16" readonly><br><br>
 
 
     <label for="verseContent"><h4>성경:</h4></label><br>
-    <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"  required ></textarea><br><br>
+    <textarea id="verseContent" placeholder="
+14 너희는 세상의 빛이라 산 위에 있는 동네가 숨겨지지 못할 것이요
+15 사람이 등불을 켜서 말 아래에 두지 아니하고 등경 위에 두나니 이러므로 집 안 모든 사람에게 비치느니라
+16 이같이 너희 빛이 사람 앞에 비치게 하여 그들로 너희 착한 행실을 보고 하늘에 계신 너희 아버지께 영광을 돌리게 하라"  readonly ></textarea><br><br>
 
     <label for="verseDate"><h4>날짜:</h4></label><br>
-    <input type="date" id="verseDate" required ><br><br>
+    <input type="date" id="verseDate" readonly><br><br>
 
     <div class="form-group">
       <label for="sel1"><h4>역본:</h4></label>
-      <select class="form-control" id="sel1" required>
+      <select class="form-control" id="sel1">
         <option selected>개역개정</option>
         <option>개역한글</option>
         <option>표준새번역</option>
@@ -77,15 +80,14 @@
     <br>
 
     <label for="prayText"><h4>묵상:</h4></label><br>
-    <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요" required ></textarea><br><br>
-
-
+    <textarea id="prayText" placeholder="늘 사랑많으신 하나님 감사합니다." readonly ></textarea><br><br>
 
    <label for="name"> <h4>작성자:</h4></label><br>
-    <input type="text" id="name" placeholder="작성자를 입력하세요"><br><br>
+    <input type="text" id="name" placeholder="김민준" readonly><br><br>
 
-    <button class="btn btn-default" id="saveBtn" type="submit" >저장하기</button><br>
-    <button class="btn btn-danger" id="cancelBtn" type="reset" onclick="cancelButton()">취소하기</button><br><br>
+    <button class="btn btn-default" id="saveBtn" type="reset" onclick="moveToEdit()"  >수정</button><br>
+    <button class="btn btn-danger" id="cancelBtn" type="reset" onclick="deleteButton()" >삭제</button><br><br>
+    <button class="btn btn-default" id="listBtn" type="reset" onclick="cancelButton()">목록</button><br><br>
     </form>
   </div>
   <div class="col-sm-4"></div>
@@ -99,68 +101,19 @@
 
 <script>
   function cancelButton() {
-
     window.location.href = 'index.html';
   }
 
-  
+  function moveToEdit(){
+    window.location.href = 'edit.html';
+  }
 
-  function saveVerse() {
-
-    const verseTitle = document.getElementById('verseTitle').value;
-    const verseContent = document.getElementById('verseContent').value;
-    const verseDate = document.getElementById('verseDate').value;
-    const bibleVersion = document.getElementById('sel1').value;
-    const prayText = document.getElementById('prayText').value;
-    const name = document.getElementById('name').value;
-  
-
-
-  //   if (!verseTitle.value.trim()) {
-  //   alert("성경 주소를 적어주세요");
-  //   verseTitle.focus();
-  //   return;
-  // }
-
-  // if (!verseContent.value.trim()) {
-  //   alert("성경 구절을 적어주세요");
-  //   verseContent.focus();
-  //   return;
-  // }
-
-
-
-    const newContent = {
-      title: verseTitle,
-      content: verseContent,
-      date: verseDate,
-      version: bibleVersion,
-      pray: prayText,
-      uname: name
-    };
-
-    // LocalStorage에 저장
-    let bible = JSON.parse(localStorage.getItem('bible')) || [];
-    bible.push(newContent);
-    localStorage.setItem('bible', JSON.stringify(bible));
-
-
-
-    document.getElementById('verseTitle').value = '';
-    document.getElementById('verseContent').value = '';
-    document.getElementById('verseDate').value = '';
-    document.getElementById('sel1').value = '개역개정';
-    document.getElementById('prayText').value = '';
-    document.getElementById('name').value = '';
-
-
-
-    alert("게시물이 추가됩니다.");
-    alert("성공적으로 추가했습니다");
+  function deleteButton(){
+    alert("삭제할까요?");
     window.location.href = 'index.html';
 
-
   }
+
 </script>
 </body>
 </html>

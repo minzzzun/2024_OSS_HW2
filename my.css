@@ -47,6 +47,14 @@ body {
 }
 
 
+#listBtn{
+  padding: 10px 20px;
+  background-color: #46a8f9;
+  color: white;
+  margin-bottom: 10px;
+  width: 115%;
+}
+
 
 .panel-default{
   cursor: pointer;
