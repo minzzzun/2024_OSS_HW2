@@ -48,8 +48,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="add.html">추가</a></li>
+        <li ><a href="index.html">Home</a></li>
+        <li class="active"><a href="add.html">추가</a></li>
       </ul>
     </div>
   </div>
@@ -124,25 +124,25 @@
 
 
 
-  if (!verseTitle.value) {
+  if (!verseTitle) {
     alert("성경 주소를 적어주세요");
     verseTitle.focus();
     return;
   }
 
-  if (!verseContent.value) {
+  if (!verseContent) {
     alert("성경 구절을 적어주세요");
     verseContent.focus();
     return;
   }
 
-  if (!verseDate.value) {
+  if (!verseDate) {
     alert("날짜를 선택해주세요");
     verseDate.focus();
     return;
   }
 
-  if (!prayText.value) {
+  if (!prayText) {
     alert("묵상 내용을 적어주세요");
     prayText.focus();
     return;
