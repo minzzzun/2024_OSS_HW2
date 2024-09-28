@@ -62,18 +62,18 @@
     <br>
     <form onsubmit="event.preventDefault();  saveVerse();">
     <label for="verseTitle"> <h4>암송구절 주소:</h4></label>
-    <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" required><br><br>
+    <input type="textarea" id="verseTitle" placeholder="여기에 암송 구절의 주소를 입력하세요" ><br><br>
 
 
     <label for="verseContent"><h4>성경:</h4></label><br>
-    <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"  required ></textarea><br><br>
+    <textarea id="verseContent" placeholder="여기에 성경 구절을 입력하세요"   ></textarea><br><br>
 
     <label for="verseDate"><h4>날짜:</h4></label><br>
-    <input type="date" id="verseDate" required ><br><br>
+    <input type="date" id="verseDate"  ><br><br>
 
     <div class="form-group">
       <label for="sel1"><h4>역본:</h4></label>
-      <select class="form-control" id="sel1" required>
+      <select class="form-control" id="sel1" >
         <option selected>개역개정</option>
         <option>개역한글</option>
         <option>표준새번역</option>
@@ -85,7 +85,7 @@
     <br>
 
     <label for="prayText"><h4>묵상:</h4></label><br>
-    <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요" required ></textarea><br><br>
+    <textarea id="prayText" placeholder="여기에 묵상내용을 입력하세요"  ></textarea><br><br>
 
 
 
@@ -121,21 +121,32 @@
     const bibleVersion = document.getElementById('sel1').value;
     const prayText = document.getElementById('prayText').value;
     const name = document.getElementById('name').value;
-  
 
 
-  //   if (!verseTitle.value.trim()) {
-  //   alert("성경 주소를 적어주세요");
-  //   verseTitle.focus();
-  //   return;
-  // }
 
-  // if (!verseContent.value.trim()) {
-  //   alert("성경 구절을 적어주세요");
-  //   verseContent.focus();
-  //   return;
-  // }
+  if (!verseTitle.value) {
+    alert("성경 주소를 적어주세요");
+    verseTitle.focus();
+    return;
+  }
 
+  if (!verseContent.value) {
+    alert("성경 구절을 적어주세요");
+    verseContent.focus();
+    return;
+  }
+
+  if (!verseDate.value) {
+    alert("날짜를 선택해주세요");
+    verseDate.focus();
+    return;
+  }
+
+  if (!prayText.value) {
+    alert("묵상 내용을 적어주세요");
+    prayText.focus();
+    return;
+  }
 
 
     const newContent = {
