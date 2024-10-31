@@ -5,7 +5,7 @@
       "title": "해리포터와 마법사의 돌",
       "author": "J.K. 롤링",
       "publisher": "문학수첩",
-      "year": 2019    
+      "year": 2019
     },
     {
       "count": 2,
@@ -34,6 +34,26 @@
       "author": "모건 하우절",
       "publisher": "인플루엔셜",
       "year": 2022
+    },
+    {
+      "count": 6,
+      "title": "그리스인 조르바",
+      "author": "니코스 카잔차카스",
+      "publisher": "더클래식",
+      "year": 2012
+    },
+    {
+      "id": "d1f2",
+      "count": null,
+      "year": null
+    },
+    {
+      "id": "7327",
+      "count": 7,
+      "title": "참을 수 없는 존재의 가벼움 ",
+      "author": "밀란 쿤데라 ",
+      "publisher": "민음사",
+      "year": 1999
     }
   ]
 }
