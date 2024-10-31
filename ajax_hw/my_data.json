@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "count": 1,
+      "title": "해리포터와 마법사의 돌",
+      "author": "J.K. 롤링",
+      "publisher": "문학수첩",
+      "year": 2019    
+    },
+    {
+      "count": 2,
+      "title": "데미안",
+      "author": "헤르만 헤세",
+      "publisher": "민음사",
+      "year": 2021
+    },
+    {
+      "count": 3,
+      "title": "코스모스",
+      "author": "칼 세이건",
+      "publisher": "사이언스북스",
+      "year": 2020
+    },
+    {
+      "count": 4,
+      "title": "아몬드",
+      "author": "손원평",
+      "publisher": "창비",
+      "year": 2017
+    },
+    {
+      "count": 5,
+      "title": "돈의 심리학",
+      "author": "모건 하우절",
+      "publisher": "인플루엔셜",
+      "year": 2022
+    }
+  ]
+}
